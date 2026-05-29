@@ -75,3 +75,23 @@ def getMarks(idOfStudent):
 
     if not found:
         print("Student not found")
+
+while(1):
+    print("1.Add Student\n2.Remove Student\n3.Search Student\n4.View Marks\n5.Exit")
+    choice = int(input("Enter your choice : "))
+
+    if choice == 1:
+        addStudent()
+    elif choice == 2:
+        idOfStudent = int(input("Enter id to remove : "))
+        removeStudent(idOfStudent)
+    elif choice == 3:
+        idOfStudent = int(input("Enter id to search : "))
+        searchStudent(idOfStudent)
+    elif choice == 4:
+        idOfStudent = int(input("Enter id to view marks : "))
+        getMarks(idOfStudent)
+    elif choice == 5:
+        break
+    else:
+        print("Invalid choice")
