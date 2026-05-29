@@ -115,4 +115,4 @@ Example `data.json`:
 
 **Najad Nabil**
 
-Made by a student learning Python 🚀
+- A student learning Python 
