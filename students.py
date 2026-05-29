@@ -28,3 +28,21 @@ def addStudent():
     file = open("data.json", "w")
     json.dump(students, file)
     file.close()
+
+def removeStudent(idOfStudent):
+    found = False
+
+    for n in students:
+        if n["id"] == idOfStudent:
+            students.remove(n)
+            found = True
+            print("Student deleted")
+
+            file = open("data.json", "w")
+            json.dump(students, file)
+            file.close()
+            break
+
+    if not found:
+        print("Student not found")
+
