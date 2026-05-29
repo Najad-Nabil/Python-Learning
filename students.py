@@ -58,3 +58,20 @@ def searchStudent(idOfStudent):
 
     if not found:
         print("Student not found")
+
+
+def getMarks(idOfStudent):
+    found = False
+
+    for i in students:
+        if i["id"] == idOfStudent:
+            if i["mark"] < 500:
+                print("Not eligible for higher studies")
+            else:
+                print("Eligible for higher studies")
+
+            found = True
+            break
+
+    if not found:
+        print("Student not found")
