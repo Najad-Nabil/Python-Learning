@@ -46,3 +46,15 @@ def removeStudent(idOfStudent):
     if not found:
         print("Student not found")
 
+
+def searchStudent(idOfStudent):
+    found = False
+
+    for i in students:
+        if i["id"] == idOfStudent:
+            print(i)
+            found = True
+            break
+
+    if not found:
+        print("Student not found")
