@@ -1,11 +1,11 @@
-# 📘 Student Management System (Python CLI)
+#  Student Management System (Python CLI)
 
 A simple **Student Management System** built using Python.  
 It uses a JSON file for storage and provides basic CRUD operations through a command-line interface.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Add new student records  
 - Remove student by ID  
@@ -16,7 +16,7 @@ It uses a JSON file for storage and provides basic CRUD operations through a com
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - Python 3  
 - JSON file handling  
@@ -24,7 +24,7 @@ It uses a JSON file for storage and provides basic CRUD operations through a com
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 
 Python-Learning/
@@ -35,7 +35,7 @@ Python-Learning/
 
 ---
 
-## ▶️ How to Run
+##  How to Run
 
 ### 1. Clone the repository
 
@@ -54,21 +54,21 @@ python Hello.py
 
 ---
 
-## 📌 Functionalities
+##  Functionalities
 
-### ➕ Add Student
+###  Add Student
 - Enter student name, age, and marks  
 - Automatically generates a unique ID  
 - Saves data into `data.json`  
 
-### ❌ Remove Student
+###  Remove Student
 - Deletes student using ID  
 - Updates JSON file  
 
-### 🔍 Search Student
+###  Search Student
 - Finds student details by ID  
 
-### 📊 View Marks
+###  View Marks
 - Displays total marks  
 - Eligibility:
   - ≥ 500 → Eligible for higher studies  
@@ -76,7 +76,7 @@ python Hello.py
 
 ---
 
-## 💾 Data Storage
+##  Data Storage
 
 Example `data.json`:
 
@@ -93,7 +93,7 @@ Example `data.json`:
 
 ---
 
-## 📚 What I Learned
+##  What I Learned
 
 - File handling in Python  
 - JSON read/write operations  
@@ -102,7 +102,7 @@ Example `data.json`:
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - Add update student feature  
 - Input validation  
@@ -111,6 +111,8 @@ Example `data.json`:
 
 ---
 
-## 👨‍💻 Author
+##  Author
+
+**Najad Nabil**
 
 Made by a student learning Python 🚀
