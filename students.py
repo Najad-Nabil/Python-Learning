@@ -1,17 +1,18 @@
 import json
 
-file = open("data.json" , "r")
 try:
-    students = json.load(file)
+    file = open("data.json" , "r")
+    data = json.load(file)
+    file.close()
 except:
-    students = []
-file.close()
+    data = {
+        "admNumber" : 0,
+        "students" : []
+    }
 
-admNumber = 2
 
 def addStudent():
-    global admNumber
-    name = input(f"Enter the name of the student {admNumber + 1} : ")
+    name = input(f"Enter the name of the student {data['admNumber'] + 1} : ")
     age = int(input("Enter of the student : "))
     mark = int(input("Enter the total marks : "))
 
@@ -19,41 +20,41 @@ def addStudent():
         "name" : name,
         "age" : age,
         "mark" : mark,
-        "id" : admNumber + 1
+        "id" : data['admNumber'] + 1
     }
-    admNumber += 1
+    data['admNumber'] += 1
 
-    students.append(student)
+    data['students'].append(student)
     file = open("data.json" , "w")
-    json.dump(students , file)
+    json.dump(data , file)
     file.close()
 
     print(f"Student created with ID : {student['id']}")
-    print(students)
+    print(data['students'])
 
 def removeStudent(idOfStudent):
     found = False
-    for n in students:
+    for n in data['students']:
         if n["id"] == idOfStudent:
-            students.remove(n)
+            data['students'].remove(n)
             found = True
             print(f"Student with ID {idOfStudent} Deleted")
 
             file = open("data.json" , "w")
-            json.dump(students , file)
+            json.dump(data , file)
             file.close()
 
             break
        
     if found == False:
         print("Student not found")
-    print(students)
+    print(data['students'])
 
 
 def searchStudent(idOfStudent):
     found = False
 
-    for i in students:
+    for i in data['students']:
         if i['id'] == idOfStudent:
             print(i)
             found = True
@@ -64,7 +65,7 @@ def searchStudent(idOfStudent):
 def getMarks(idOfStudent):
     found = False
 
-    for i in students:
+    for i in data['students']:
         if i['id'] == idOfStudent:
             if i['mark'] < 500:
                 print(f"Total marks of {i['name']} is {i['mark']} and is not eligible for higher studies")
