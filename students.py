@@ -1,14 +1,22 @@
 import json
 
-try:
-    file = open("data.json" , "r")
-    data = json.load(file)
+def load_data():
+    try:
+        file = open("data.json" , "r")
+        data = json.load(file)
+        file.close()
+    except:
+        data = {
+            "admNumber" : 0,
+            "students" : []
+        }
+    return data
+
+
+def save_data(data):
+    file = open("data.json" , "w")
+    json.dump(data , file)
     file.close()
-except:
-    data = {
-        "admNumber" : 0,
-        "students" : []
-    }
 
 
 def addStudent():
@@ -16,18 +24,18 @@ def addStudent():
     age = int(input("Enter of the student : "))
     mark = int(input("Enter the total marks : "))
 
+    newID = data['admNumber'] + 1
+
     student = {
         "name" : name,
         "age" : age,
         "mark" : mark,
-        "id" : data['admNumber'] + 1
+        "id" : newID
     }
     data['admNumber'] += 1
 
     data['students'].append(student)
-    file = open("data.json" , "w")
-    json.dump(data , file)
-    file.close()
+    save_data(data)
 
     print(f"Student created with ID : {student['id']}")
     print(data['students'])
@@ -39,15 +47,12 @@ def removeStudent(idOfStudent):
             data['students'].remove(n)
             found = True
             print(f"Student with ID {idOfStudent} Deleted")
-
-            file = open("data.json" , "w")
-            json.dump(data , file)
-            file.close()
-
             break
        
     if found == False:
         print("Student not found")
+    else:
+        save_data(data)
     print(data['students'])
 
 
@@ -78,6 +83,8 @@ def getMarks(idOfStudent):
         print("Student not found")
 
 
+
+data = load_data()
 
 while(1):
     print("1.Add Student\n2.Remove Student\n3.Search Student\n4.View Marks\n5.Exit")
